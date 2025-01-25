@@ -9,7 +9,7 @@ def handle_client(conn, addr):
             connected = False
         else:
             print("Received from client " + str(addr) + ": " + str(data))
-            data = input('Server-> ')
+            data = input('Server message to send-> ')
             print(f"Sending to client: {data}")
             conn.send(data.encode())
     conn.close()

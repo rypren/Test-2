@@ -4,11 +4,10 @@ def client_program():
     host = socket.gethostbyname(socket.gethostname())
     port = 65432
 
-
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect((host, port))
 
-    message = input("Client-> ")
+    message = input("Client message to send-> ")
 
     while message.lower().strip() != 'bye':
         print(f"Sending to server: {message}")
@@ -17,7 +16,7 @@ def client_program():
 
         print('Received from server: ' + data)
 
-        message = input("Client-> ")
+        message = input("Client message to send-> ")
 
     client_socket.close()
 
